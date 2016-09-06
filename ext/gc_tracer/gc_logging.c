@@ -443,7 +443,7 @@ gc_tracer_setup_logging_out(VALUE self, VALUE filename)
 	    const char *fname = StringValueCStr(filename);
 	    FILE *out;
 
-	    if ((out = fopen(fname, "w")) == NULL) {
+	    if ((out = fopen(fname, "a")) == NULL) {
 		rb_raise(rb_eRuntimeError, "can not open file: %s\n", fname);
 	    }
 	    logging->out = out;
